@@ -49,7 +49,7 @@ Currently completing my M.S. in Bioinformatics at Johns Hopkins University while
 I am open to collaborations, consulting work, and full-time roles in bioinformatics, data engineering, and scientific software development.
 
 Email: [Melsaid2017@gmail.com](mailto:Melsaid2017@gmail.com)  
-Portfolio: [https://MohamedElsaid-bit.github.io/Portfolio/](https://MohamedElsaid-bit.github.io/Portfolio/)  
+Portfolio: [https://MohamedElsaid-bit.github.io/Portfolio/]([https://MohamedElsaid-bit.github.io/Portfolio/](https://MohamedElsaid-bit.github.io/Portfolio/))  
 LinkedIn: [linkedin.com/in/mohamed-elsaid-0a0b56231](https://www.linkedin.com/in/mohamed-elsaid-0a0b56231/)  
 GitHub: [github.com/MohamedElsaid-bit](https://github.com/MohamedElsaid-bit)
 
