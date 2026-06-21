@@ -12,7 +12,7 @@ Resume: [Mohamed_Elsaid_Resume.pdf](./Mohamed_Elsaid_Resume.pdf)
 ---
 
 ## About Me
-I started in pharmaceutical QC and clinical assay work at **Pfizer** and **Catalent**, where vaccine programs and GMP audits taught me that data is only as useful as it is trustworthy. I'm completing my M.S. in Bioinformatics at Johns Hopkins University and bringing that same standard — validated, reproducible, well-documented — to computational biology.
+I started in pharmaceutical QC and clinical assay work at **Pfizer** and **Catalent**, where vaccine programs and GMP audits taught me that data is only as useful as it is trustworthy. I'm completing my M.S. in Bioinformatics at Johns Hopkins University and bringing that same standard  validated, reproducible, well-documented — to computational biology.
 
 This repository indexes my completed and in-progress bioinformatics/ML projects, each version-controlled and documented for reproducibility.
 
