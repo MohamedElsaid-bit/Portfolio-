@@ -21,7 +21,7 @@ This repository indexes my completed and in-progress bioinformatics/ML projects,
 ## Completed Projects
 
 ### [RNA-seq Differential Expression Pipeline](https://github.com/MohamedElsaid-bit/rna-seq-differential-expression-pipeline)
-End-to-end RNA-seq workflow; FastQC, Trimmomatic, STAR alignment, featureCounts, and DESeq2 differential expression with GO/KEGG pathway enrichment across 3 replicate sets. Fully version-controlled for reproducibility.
+End-to-end RNA-seq workflow;FastQC, Trimmomatic, STAR alignment, featureCounts, and DESeq2 differential expression with GO/KEGG pathway enrichment across 3 replicate sets. Fully version-controlled for reproducibility.
 **Stack:** Python, R/DESeq2, STAR, FastQC, GO/KEGG
 
 ### [Biomedical ML Classification Pipeline](https://github.com/MohamedElsaid-bit/biomedical-ml-classification)
