@@ -12,7 +12,7 @@ Resume: [Mohamed_Elsaid_Resume.pdf](./Mohamed_Elsaid_Resume.pdf)
 ---
 
 ## About Me
-I started in pharmaceutical QC and clinical assay work at **Pfizer** and **Catalent**, where vaccine programs and GMP audits taught me that data is only as useful as it is trustworthy. I'm completing my M.S. in Bioinformatics at Johns Hopkins University and bringing that same standard thats validated, reproducible, well-documented to computational biology.
+I started in pharmaceutical QC and clinical assay work at **Pfizer** and **Catalent**, where vaccine programs and GMP audits taught me that data is only as useful as it is trustworthy. I'm completing my M.S. in Bioinformatics at Johns Hopkins University and bringing that same standard of validation, reproducibility, and documentation to computational biology.
 
 This repository indexes my completed and in-progress bioinformatics/ML projects, each version-controlled and documented for reproducibility.
 
@@ -21,7 +21,7 @@ This repository indexes my completed and in-progress bioinformatics/ML projects,
 ## Completed Projects
 
 ### [RNA-seq Differential Expression Pipeline](https://github.com/MohamedElsaid-bit/rna-seq-differential-expression-pipeline)
-End-to-end RNA-seq workflow;FastQC, Trimmomatic, STAR alignment, featureCounts, and DESeq2 differential expression with GO/KEGG pathway enrichment across 3 replicate sets. Fully version-controlled for reproducibility.
+End-to-end RNA-seq workflow using FastQC, Trimmomatic, STAR alignment, featureCounts, and DESeq2 differential expression, with GO/KEGG pathway enrichment across 3 replicate sets. Fully version-controlled for reproducibility.
 **Stack:** Python, R/DESeq2, STAR, FastQC, GO/KEGG
 
 ### [Biomedical ML Classification Pipeline](https://github.com/MohamedElsaid-bit/biomedical-ml-classification)
@@ -56,7 +56,7 @@ Benchmarked Random Forest, Logistic Regression, and SVM classifiers on a biologi
 ---
 
 ## Contact
-Open to entry-level roles in bioinformatics, computational biology, and data science — particularly where data integrity and scientific rigor are valued.
+Open to entry-level roles in bioinformatics, computational biology, and data science, particularly where data integrity and scientific rigor are valued.
 
 Email: [melsaid2017@gmail.com](mailto:melsaid2017@gmail.com)
 LinkedIn: [linkedin.com/in/mohamed-elsaid-0a0b56231](https://www.linkedin.com/in/mohamed-elsaid-0a0b56231/)
