@@ -27,18 +27,18 @@ graph TD
     A --> C["ML / Biotech Data Analytics"]
     A --> D["Multi-Omics Integration"]
 
-    B --> B1["✅ RNA-seq Differential Expression Pipeline<br/>STAR • DESeq2 • GO/KEGG"]
-    B --> B2["🚧 Germline Variant Calling Pipeline<br/>GATK4 Best Practices • BWA-MEM2"]
-    B --> B3["📋 Gut Microbiome Diversity Analysis<br/>16S / Metagenomics • QIIME2"]
+    B --> B1["🟡 RNA-seq Differential Expression Pipeline<br/>STAR • DESeq2 • GO/KEGG — execution in progress"]
+    B --> B2["⚪ Germline Variant Calling Pipeline<br/>GATK4 Best Practices • BWA-MEM2 — queued next"]
+    B --> B3["⚪ Gut Microbiome Diversity Analysis<br/>16S / Metagenomics • QIIME2"]
 
-    C --> C1["✅ Biomedical ML Classification Pipeline<br/>Random Forest • SVM • Logistic Regression"]
-    C --> C2["📋 Antimicrobial Resistance Classifier<br/>Genomic + Phenotypic ML"]
+    C --> C1["🟢 Biomedical ML Classification Pipeline<br/>Random Forest • SVM • Logistic Regression"]
+    C --> C2["⚪ Antimicrobial Resistance Classifier<br/>Genomic + Phenotypic ML"]
 
-    D --> D1["📋 Multi-Omics Integration Capstone<br/>+ Power BI Dashboard"]
+    D --> D1["⚪ Multi-Omics Integration Capstone<br/>+ Power BI Dashboard"]
 
-    style B1 fill:#2ea44f,color:#ffffff,stroke:#22863a
     style C1 fill:#2ea44f,color:#ffffff,stroke:#22863a
-    style B2 fill:#d4a72c,color:#ffffff,stroke:#9e7b1f
+    style B1 fill:#d4a72c,color:#ffffff,stroke:#9e7b1f
+    style B2 fill:#6a737d,color:#ffffff,stroke:#586069
     style B3 fill:#6a737d,color:#ffffff,stroke:#586069
     style C2 fill:#6a737d,color:#ffffff,stroke:#586069
     style D1 fill:#6a737d,color:#ffffff,stroke:#586069
@@ -50,12 +50,8 @@ graph TD
 
 ## Completed Projects
 
-### [RNA-seq Differential Expression Pipeline](https://github.com/MohamedElsaid-bit/rna-seq-differential-expression-pipeline)
-End-to-end NGS workflow: raw read QC (FastQC), adapter/quality trimming (Trimmomatic), splice-aware alignment (STAR), gene-level quantification (featureCounts), and differential expression testing (DESeq2), with downstream GO/KEGG pathway enrichment across 3 replicate sets.
-**Stack:** Python, R/DESeq2, STAR, FastQC, Trimmomatic, GO/KEGG
-
 ### [Biomedical ML Classification Pipeline](https://github.com/MohamedElsaid-bit/biomedical-ml-classification)
-Benchmarked Random Forest, Logistic Regression, and SVM classifiers on a biological dataset with 5-fold cross-validation and feature engineering. Reports ROC/AUC, confusion matrices, and feature importance for model interpretability.
+Benchmarked Random Forest, Logistic Regression, and SVM classifiers on a biological dataset with 5-fold cross-validation and feature engineering. Reports ROC/AUC, confusion matrices, and feature importance for model interpretability. Leakage-aware pipeline design, CI-validated on every push.
 **Stack:** Python, scikit-learn
 
 ---
@@ -64,10 +60,11 @@ Benchmarked Random Forest, Logistic Regression, and SVM classifiers on a biologi
 
 | Project | Description | Stack | Status |
 |---|---|---|---|
-| **Germline Variant Calling Pipeline** | GATK4 Best Practices workflow (FastQC → Trimmomatic → BWA-MEM2 → MarkDuplicates → BQSR → HaplotypeCaller → filtering → SnpEff annotation) on a chr20/NA12878 benchmark subset. | Snakemake, GATK4, BWA-MEM2, SnpEff | 🚧 In Progress |
-| **ML Drug / Antimicrobial Resistance Classifier** | Classifier predicting antimicrobial resistance from genomic and phenotypic data — direct application to biotech drug-resistance screening. | Python, scikit-learn | 📋 Planned |
-| **Human Gut Microbiome Diversity Analysis** | Diversity/composition analysis from 16S rRNA and metagenomic sequencing data. | Python, R, QIIME2 | 📋 Planned |
-| **Multi-omics Integration Capstone** | Capstone integrating transcriptomic, genomic, and/or other omics layers into a unified analysis, with an interactive Power BI dashboard for results exploration. | Python, R, Power BI | 📋 Planned |
+| **RNA-seq Differential Expression Pipeline** | Snakemake workflow built end-to-end (FastQC → Trimmomatic → STAR → featureCounts → DESeq2 → GO/KEGG enrichment). Currently executing against the 4-sample GEO subset to generate and commit real results. | Python, R/DESeq2, STAR, FastQC, GO/KEGG | 🟡 In Progress |
+| **Germline Variant Calling Pipeline** | GATK4 Best Practices workflow (FastQC → Trimmomatic → BWA-MEM2 → MarkDuplicates → BQSR → HaplotypeCaller → filtering → SnpEff annotation) on a chr20/NA12878 benchmark subset. | Snakemake, GATK4, BWA-MEM2, SnpEff | ⚪ Planned — queued next |
+| **ML Drug / Antimicrobial Resistance Classifier** | Classifier predicting antimicrobial resistance from genomic and phenotypic data — direct application to biotech drug-resistance screening. | Python, scikit-learn | ⚪ Planned |
+| **Human Gut Microbiome Diversity Analysis** | Diversity/composition analysis from 16S rRNA and metagenomic sequencing data. | Python, R, QIIME2 | ⚪ Planned |
+| **Multi-omics Integration Capstone** | Capstone integrating transcriptomic, genomic, and/or other omics layers into a unified analysis, with an interactive Power BI dashboard for results exploration. | Python, R, Power BI | ⚪ Planned |
 
 ---
 
