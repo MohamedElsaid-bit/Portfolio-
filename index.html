@@ -161,7 +161,7 @@
     <section class="hero">
       <span class="stamp done"><span class="dot"></span>Portfolio · Live</span>
       <h1>Bridging pharmaceutical rigor with computational biology.</h1>
-      <p class="subtitle">M.S. in Bioinformatics from Johns Hopkins (2026) with three years of industry experience in GMP and GLP data integrity at Pfizer and Catalent. I apply that same standard of validation and documentation to NGS pipeline development and machine learning.</p>
+      <p class="subtitle">M.S. in Bioinformatics from Johns Hopkins (completed May 2026) with three years of industry experience in GMP and GLP data integrity at Pfizer and Catalent. I apply that same standard of validation and documentation to NGS pipeline development and machine learning.</p>
       <div class="cta">
         <a class="btn primary" href="#about">About Me</a>
         <a class="btn" href="#map">Project Map</a>
@@ -181,10 +181,10 @@
         </div>
         <div class="panel">
           <ul class="glance-list">
-            <li><span class="k">Education</span><span class="v">M.S. Bioinformatics, Johns Hopkins (2026 grad)</span></li>
+            <li><span class="k">Education</span><span class="v">M.S. Bioinformatics, Johns Hopkins (completed May 2026)</span></li>
             <li><span class="k">Experience</span><span class="v">3+ yrs, Pfizer &amp; Catalent (GMP/GLP)</span></li>
-            <li><span class="k">Completed</span><span class="v">1 end-to-end ML pipeline</span></li>
-            <li><span class="k">In progress</span><span class="v">RNA-seq DE pipeline execution</span></li>
+            <li><span class="k">Completed</span><span class="v">Variant calling and ML classification</span></li>
+            <li><span class="k">In progress</span><span class="v">RNA-seq DE pipeline (not yet executed)</span></li>
             <li><span class="k">Contact</span><span class="v"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=melsaid2017@gmail.com" target="_blank" rel="noopener">melsaid2017@gmail.com</a></span></li>
           </ul>
         </div>
@@ -204,9 +204,9 @@
           <circle cx="260" cy="90" r="6" style="fill:var(--amber);stroke:var(--panel);stroke-width:4"/>
           <text x="260" y="70" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">RNA-seq DE</text>
           <text x="260" y="112" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">STAR · DESeq2</text>
-          <circle cx="560" cy="90" r="6" style="fill:var(--slate);stroke:var(--panel);stroke-width:4"/>
+          <circle cx="560" cy="90" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
           <text x="560" y="70" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">Variant Calling</text>
-          <text x="560" y="112" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">GATK4 · BWA-MEM2</text>
+          <text x="560" y="112" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">GATK4 · BWA-MEM</text>
           <circle cx="860" cy="90" r="6" style="fill:var(--slate);stroke:var(--panel);stroke-width:4"/>
           <text x="860" y="70" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">Gut Microbiome</text>
           <text x="860" y="112" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">16S · QIIME2</text>
@@ -242,8 +242,8 @@
         <div class="map-track">
           <h3>NGS &amp; Pipeline Development</h3>
           <div class="rail">
-            <div class="map-node"><span class="dot progress"></span><strong>RNA-seq Differential Expression</strong><p>STAR · DESeq2 · GO/KEGG — execution &amp; results in progress</p></div>
-            <div class="map-node"><span class="dot planned"></span><strong>Germline Variant Calling</strong><p>GATK4 Best Practices · BWA-MEM2 · SnpEff — queued next</p></div>
+            <div class="map-node"><span class="dot progress"></span><strong>RNA-seq Differential Expression</strong><p>STAR · DESeq2 · Snakemake: template built, not yet executed</p></div>
+            <div class="map-node"><span class="dot done"></span><strong>Germline Variant Calling</strong><p>GATK4 · BWA-MEM · Snakemake: complete on chr21 with simulated reads</p></div>
             <div class="map-node"><span class="dot planned"></span><strong>Gut Microbiome Diversity</strong><p>16S / metagenomics · QIIME2</p></div>
           </div>
         </div>
@@ -321,6 +321,39 @@
           </svg>
         </div>
       </div>
+      <div class="proj-grid" style="margin-top:16px">
+        <article class="card">
+          <h3><span class="stamp done"><span class="dot"></span>Done</span>Germline Variant Calling Pipeline</h3>
+          <p>GATK4 best practices workflow orchestrated with Snakemake: BWA-MEM alignment, duplicate marking, base quality recalibration, HaplotypeCaller, and separate hard filtering of SNPs and indels. Run end to end on real chr21 reference and known sites (dbSNP, Mills) with simulated reads from the nf-core test data, which the README states plainly.</p>
+          <p class="result">Result: 89 raw candidate variants, 71 PASS after hard filtering (68 SNPs, 3 indels). Ti/Tv of 0.26 and 0% dbSNP concordance are reported and explained as expected artifacts of simulated reads.</p>
+          <div class="tech">
+            <span class="chip">GATK4</span><span class="chip">Snakemake</span><span class="chip">BWA-MEM</span><span class="chip">bcftools</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/MohamedElsaid-bit/variant-calling-pipeline" target="_blank" rel="noopener">View Code →</a>
+          </div>
+        </article>
+        <div class="card figure-card">
+          <svg viewBox="0 0 380 190" role="img" aria-label="Variant counts: 89 raw candidate variants from HaplotypeCaller, 71 passing hard filters (68 SNPs and 3 indels).">
+            <text x="10" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">71</text>
+            <text x="10" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">PASS VARIANTS</text>
+            <text x="200" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">89</text>
+            <text x="200" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">RAW CANDIDATES</text>
+            <line x1="10" y1="58" x2="370" y2="58" style="stroke:var(--rail);stroke-width:1"/>
+
+            <text x="10" y="86" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">Raw calls</text>
+            <rect x="95" y="76" width="200" height="10" rx="2" style="fill:var(--slate)"/>
+            <text x="305" y="85" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">89</text>
+
+            <text x="10" y="116" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">PASS</text>
+            <rect x="95" y="106" width="160" height="10" rx="2" style="fill:var(--teal)"/>
+            <text x="305" y="115" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">71</text>
+
+            <text x="10" y="146" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">PASS = 68 SNPs + 3 indels, GATK hard filters</text>
+            <text x="10" y="170" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">chr21 reference · simulated reads (nf-core test data)</text>
+          </svg>
+        </div>
+      </div>
     </section>
 
     <section class="section">
@@ -333,14 +366,7 @@
           <span class="stamp progress"><span class="dot"></span>In Progress</span>
           <div class="ri-text">
             <strong>RNA-seq Differential Expression Pipeline</strong>
-            <p>Snakemake workflow built (FastQC → Trimmomatic → STAR → featureCounts → DESeq2 → GO/KEGG). Currently running end-to-end to generate committed results.</p>
-          </div>
-        </div>
-        <div class="roadmap-item">
-          <span class="stamp planned"><span class="dot"></span>Planned</span>
-          <div class="ri-text">
-            <strong>Germline Variant Calling Pipeline</strong>
-            <p>GATK4 Best Practices: FastQC → Trimmomatic → BWA-MEM2 → MarkDuplicates → BQSR → HaplotypeCaller → filtering → SnpEff, orchestrated with Snakemake.</p>
+            <p>Snakemake workflow written (FastQC → Trimmomatic → STAR → featureCounts → DESeq2 → pathway enrichment). It has not been executed yet, so no results are committed. Known bugs are being fixed before the first real run.</p>
           </div>
         </div>
         <div class="roadmap-item">
@@ -378,7 +404,7 @@
     </section>
 
     <footer>
-      © <span id="y"></span> Mohamed Elsaid — Rev 2026.08
+      © <span id="y"></span> Mohamed Elsaid · Rev 2026.09
     </footer>
   </main>
 
