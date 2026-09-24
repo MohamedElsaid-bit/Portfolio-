@@ -38,7 +38,7 @@ graph TD
     A --> C["ML / Biotech Data Analytics"]
     A --> D["Multi-Omics Integration"]
 
-    B --> B1["🟡 RNA-seq Differential Expression Pipeline<br/>STAR • DESeq2 • GO/KEGG — execution in progress"]
+    B --> B1["🟢 RNA-seq Differential Expression Pipeline<br/>STAR • DESeq2 • GSEA, airway data on three chromosomes"]
     B --> B2["⚪ Germline Variant Calling Pipeline<br/>GATK4 Best Practices • BWA-MEM2 — queued next"]
     B --> B3["⚪ Gut Microbiome Diversity Analysis<br/>16S / Metagenomics • QIIME2"]
 
@@ -48,7 +48,7 @@ graph TD
     D --> D1["⚪ Multi-Omics Integration Capstone<br/>+ Power BI Dashboard"]
 
     style C1 fill:#2ea44f,color:#ffffff,stroke:#22863a
-    style B1 fill:#d4a72c,color:#ffffff,stroke:#9e7b1f
+    style B1 fill:#2ea44f,color:#ffffff,stroke:#22863a
     style B2 fill:#6a737d,color:#ffffff,stroke:#586069
     style B3 fill:#6a737d,color:#ffffff,stroke:#586069
     style C2 fill:#6a737d,color:#ffffff,stroke:#586069
@@ -76,13 +76,27 @@ Benchmarked Random Forest, Logistic Regression, and SVM classifiers on a biologi
 
 **Stack:** Python · scikit-learn &nbsp;|&nbsp; [View Code →](https://github.com/MohamedElsaid-bit/biomedical-ml-classification)
 
+### [RNA-seq Differential Expression Pipeline](https://github.com/MohamedElsaid-bit/rna-seq-differential-expression-pipeline)
+Snakemake workflow (FastQC, Trimmomatic, STAR, featureCounts, DESeq2, clusterProfiler GSEA, MultiQC) run end to end on public airway smooth muscle data (GEO GSE52778, dexamethasone versus untreated, 4 donors, paired design). Scoped to chr5, chr6 and chr17 and the first 5 million read pairs per sample so it runs on a laptop, which the project README states plainly.
+
+**Results:** 108 differentially expressed genes (61 up, 47 down). Known dexamethasone genes are recovered:
+
+| Gene | log2 fold change | Adjusted p |
+|---|:---:|:---:|
+| DUSP1 | 2.99 | 6.0e-106 |
+| PER1 | 3.04 | 9.5e-38 |
+| FKBP5 | 3.85 | 1.7e-23 |
+
+*Reported and explained in the project README: 21 to 24% unique mapping (whole genome reads against a three chromosome reference) and no significant Hallmark gene sets at this scale.*
+
+**Stack:** Snakemake · STAR · DESeq2 · R &nbsp;|&nbsp; [View Code →](https://github.com/MohamedElsaid-bit/rna-seq-differential-expression-pipeline)
+
 ---
 
 ## Roadmap (In Progress / Planned)
 
 | Project | Description | Stack | Status |
 |---|---|---|:---:|
-| **RNA-seq Differential Expression** | Snakemake workflow built end-to-end (FastQC → Trimmomatic → STAR → featureCounts → DESeq2 → GO/KEGG). Executing against a 4-sample GEO subset to generate and commit real results. | Python, R/DESeq2, STAR, FastQC, GO/KEGG | 🟡 In Progress |
 | **Germline Variant Calling** | GATK4 Best Practices (FastQC → Trimmomatic → BWA-MEM2 → MarkDuplicates → BQSR → HaplotypeCaller → filtering → SnpEff) on a chr20/NA12878 benchmark subset. | Snakemake, GATK4, BWA-MEM2, SnpEff | ⚪ Queued next |
 | **AMR Classifier** | Predicts antimicrobial resistance from genomic + phenotypic data — direct biotech drug-resistance screening application. | Python, scikit-learn | ⚪ Planned |
 | **Gut Microbiome Diversity** | Diversity/composition analysis from 16S rRNA and metagenomic sequencing data. | Python, R, QIIME2 | ⚪ Planned |

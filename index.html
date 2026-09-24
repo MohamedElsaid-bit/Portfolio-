@@ -183,8 +183,8 @@
           <ul class="glance-list">
             <li><span class="k">Education</span><span class="v">M.S. Bioinformatics, Johns Hopkins (completed May 2026)</span></li>
             <li><span class="k">Experience</span><span class="v">3+ yrs, Pfizer &amp; Catalent (GMP/GLP)</span></li>
-            <li><span class="k">Completed</span><span class="v">Variant calling and ML classification</span></li>
-            <li><span class="k">In progress</span><span class="v">RNA-seq DE pipeline (not yet executed)</span></li>
+            <li><span class="k">Completed</span><span class="v">RNA-seq DE, variant calling and ML classification</span></li>
+            <li><span class="k">Next</span><span class="v">Gut microbiome diversity analysis (planned)</span></li>
             <li><span class="k">Contact</span><span class="v"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=melsaid2017@gmail.com" target="_blank" rel="noopener">melsaid2017@gmail.com</a></span></li>
           </ul>
         </div>
@@ -201,7 +201,7 @@
           <!-- Row 1: NGS Pipelines -->
           <text x="20" y="42" style="font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;fill:var(--muted)">NGS PIPELINES</text>
           <line x1="20" y1="90" x2="900" y2="90" style="stroke:var(--rail);stroke-width:1"/>
-          <circle cx="260" cy="90" r="6" style="fill:var(--amber);stroke:var(--panel);stroke-width:4"/>
+          <circle cx="260" cy="90" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
           <text x="260" y="70" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">RNA-seq DE</text>
           <text x="260" y="112" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">STAR · DESeq2</text>
           <circle cx="560" cy="90" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
@@ -242,7 +242,7 @@
         <div class="map-track">
           <h3>NGS &amp; Pipeline Development</h3>
           <div class="rail">
-            <div class="map-node"><span class="dot progress"></span><strong>RNA-seq Differential Expression</strong><p>STAR · DESeq2 · Snakemake: template built, not yet executed</p></div>
+            <div class="map-node"><span class="dot done"></span><strong>RNA-seq Differential Expression</strong><p>STAR · DESeq2 · Snakemake: complete on airway data, scoped to three chromosomes</p></div>
             <div class="map-node"><span class="dot done"></span><strong>Germline Variant Calling</strong><p>GATK4 · BWA-MEM · Snakemake: complete on chr21 with simulated reads</p></div>
             <div class="map-node"><span class="dot planned"></span><strong>Gut Microbiome Diversity</strong><p>16S / metagenomics · QIIME2</p></div>
           </div>
@@ -354,6 +354,43 @@
           </svg>
         </div>
       </div>
+      <div class="proj-grid" style="margin-top:16px">
+        <article class="card">
+          <h3><span class="stamp done"><span class="dot"></span>Done</span>RNA-seq Differential Expression Pipeline</h3>
+          <p>Snakemake workflow (FastQC, Trimmomatic, STAR, featureCounts, DESeq2, clusterProfiler GSEA, MultiQC) run end to end on public airway smooth muscle data (GEO GSE52778, dexamethasone versus untreated, 4 donors, paired design). Scoped to chr5, chr6 and chr17 and the first 5 million read pairs per sample so it runs on a laptop, which the README states plainly.</p>
+          <p class="result">Result: 108 differentially expressed genes (61 up, 47 down). The known dexamethasone genes DUSP1, PER1 and FKBP5 are all strongly induced, and PCA separates treated from untreated with no overlap. Reported and explained: 21 to 24% unique mapping (whole genome reads against a three chromosome reference) and no significant Hallmark gene sets at this scale.</p>
+          <div class="tech">
+            <span class="chip">Snakemake</span><span class="chip">STAR</span><span class="chip">DESeq2</span><span class="chip">R</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/MohamedElsaid-bit/rna-seq-differential-expression-pipeline" target="_blank" rel="noopener">View Code →</a>
+          </div>
+        </article>
+        <div class="card figure-card">
+          <svg viewBox="0 0 380 210" role="img" aria-label="RNA-seq results: 108 differentially expressed genes (61 up, 47 down). Known dexamethasone genes DUSP1, PER1 and FKBP5 are induced with log2 fold changes of 2.99, 3.04 and 3.85.">
+            <text x="10" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">108</text>
+            <text x="10" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">DE GENES (61 UP, 47 DOWN)</text>
+            <text x="250" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">3 of 3</text>
+            <text x="250" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">KNOWN GENES UP</text>
+            <line x1="10" y1="58" x2="370" y2="58" style="stroke:var(--rail);stroke-width:1"/>
+
+            <text x="10" y="86" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">DUSP1</text>
+            <rect x="75" y="76" width="149.5" height="10" rx="2" style="fill:var(--teal)"/>
+            <text x="234" y="85" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">2.99</text>
+
+            <text x="10" y="116" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">PER1</text>
+            <rect x="75" y="106" width="152" height="10" rx="2" style="fill:var(--teal)"/>
+            <text x="237" y="115" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">3.04</text>
+
+            <text x="10" y="146" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">FKBP5</text>
+            <rect x="75" y="136" width="192.5" height="10" rx="2" style="fill:var(--teal)"/>
+            <text x="277" y="145" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">3.85</text>
+
+            <text x="10" y="172" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">bars: log2 fold change, dex vs untreated</text>
+            <text x="10" y="192" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">airway smooth muscle · chr5, chr6, chr17 · 4 donors</text>
+          </svg>
+        </div>
+      </div>
     </section>
 
     <section class="section">
@@ -362,13 +399,6 @@
         <p class="section-sub">Next pipelines in active development, in build order.</p>
       </div>
       <div class="roadmap">
-        <div class="roadmap-item">
-          <span class="stamp progress"><span class="dot"></span>In Progress</span>
-          <div class="ri-text">
-            <strong>RNA-seq Differential Expression Pipeline</strong>
-            <p>Snakemake workflow written (FastQC → Trimmomatic → STAR → featureCounts → DESeq2 → pathway enrichment). It has not been executed yet, so no results are committed. Known bugs are being fixed before the first real run.</p>
-          </div>
-        </div>
         <div class="roadmap-item">
           <span class="stamp planned"><span class="dot"></span>Planned</span>
           <div class="ri-text">
