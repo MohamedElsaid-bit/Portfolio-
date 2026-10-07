@@ -183,8 +183,8 @@
           <ul class="glance-list">
             <li><span class="k">Education</span><span class="v">M.S. Bioinformatics, Johns Hopkins (completed May 2026)</span></li>
             <li><span class="k">Experience</span><span class="v">3+ yrs, Pfizer &amp; Catalent (GMP/GLP)</span></li>
-            <li><span class="k">Completed</span><span class="v">RNA-seq DE, variant calling, ML classification, portfolio analytics (SQL) and gut microbiome diversity</span></li>
-            <li><span class="k">Next</span><span class="v">Multi-omics integration capstone (planned)</span></li>
+            <li><span class="k">Completed</span><span class="v">All 6 pipeline projects: RNA-seq DE, variant calling, ML classification, portfolio analytics (SQL), gut microbiome diversity and multi-omics integration</span></li>
+            <li><span class="k">Next</span><span class="v">Portfolio-wide polish: profile README, pinned repos, consistency pass</span></li>
             <li><span class="k">Contact</span><span class="v"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=melsaid2017@gmail.com" target="_blank" rel="noopener">melsaid2017@gmail.com</a></span></li>
           </ul>
         </div>
@@ -227,9 +227,9 @@
           <!-- Row 3: Multi-Omics -->
           <text x="20" y="322" style="font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;fill:var(--muted)">MULTI-OMICS</text>
           <line x1="20" y1="370" x2="300" y2="370" style="stroke:var(--rail);stroke-width:1"/>
-          <circle cx="260" cy="370" r="6" style="fill:var(--slate);stroke:var(--panel);stroke-width:4"/>
+          <circle cx="260" cy="370" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
           <text x="260" y="350" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">Multi-Omics Capstone</text>
-          <text x="260" y="392" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">+ Power BI</text>
+          <text x="260" y="392" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">DIABLO · mixOmics</text>
 
           <!-- Legend -->
           <line x1="0" y1="428" x2="1000" y2="428" style="stroke:var(--rail);stroke-width:1"/>
@@ -261,7 +261,7 @@
         <div class="map-track">
           <h3>Multi-Omics Integration</h3>
           <div class="rail">
-            <div class="map-node"><span class="dot planned"></span><strong>Multi-Omics Capstone</strong><p>Integrated analysis + Power BI dashboard for results exploration</p></div>
+            <div class="map-node"><span class="dot done"></span><strong>Multi-Omics Capstone</strong><p>DIABLO integration on real matched TCGA data; Power BI dashboard planned next</p></div>
           </div>
         </div>
       </div>
@@ -466,6 +466,43 @@
           </svg>
         </div>
       </div>
+      <div class="proj-grid" style="margin-top:16px">
+        <article class="card">
+          <h3><span class="stamp done"><span class="dot"></span>Done</span>Multi-Omics Integration Capstone</h3>
+          <p>DIABLO multi-omics integration (mixOmics) on real, matched TCGA breast cancer data: mRNA expression, miRNA expression, and RPPA protein, measured on the same patients. Benchmarks a sparse 3-block integrated model against what each omics layer predicts molecular subtype alone.</p>
+          <p class="result">Result: mRNA expression alone already reaches 98.6% test accuracy; the integrated model reaches 94.3% with a sparse 45-feature signature, predicting on test samples missing the protein block entirely. Reported honestly: integration did not beat the single best block here, its real value is predicting robustly despite a missing omics layer.</p>
+          <div class="tech">
+            <span class="chip">mixOmics</span><span class="chip">DIABLO</span><span class="chip">R</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/MohamedElsaid-bit/multi-omics-integration-capstone" target="_blank" rel="noopener">View Code →</a>
+          </div>
+        </article>
+        <div class="card figure-card">
+          <svg viewBox="0 0 380 210" role="img" aria-label="Model comparison: mRNA alone reaches 98.6 percent test accuracy, miRNA alone 84.3 percent, the 3 block DIABLO integration 94.3 percent predicting without the protein block.">
+            <text x="10" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">98.6%</text>
+            <text x="10" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">BEST SINGLE BLOCK (MRNA)</text>
+            <text x="250" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">94.3%</text>
+            <text x="250" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">INTEGRATED, 2 OF 3 BLOCKS</text>
+            <line x1="10" y1="58" x2="370" y2="58" style="stroke:var(--rail);stroke-width:1"/>
+
+            <text x="10" y="82" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">mRNA alone</text>
+            <rect x="115" y="72" width="201.6" height="8" rx="2" style="fill:var(--teal)"/>
+            <text x="330" y="79" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">98.6%</text>
+
+            <text x="10" y="112" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">miRNA alone</text>
+            <rect x="115" y="102" width="172" height="8" rx="2" style="fill:var(--slate)"/>
+            <text x="330" y="109" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">84.3%</text>
+
+            <text x="10" y="142" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">DIABLO integrated</text>
+            <rect x="115" y="132" width="192.5" height="8" rx="2" style="fill:var(--teal)"/>
+            <text x="330" y="139" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">94.3%</text>
+
+            <text x="10" y="172" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">Protein block: 14.5% CV error, no test data</text>
+            <text x="10" y="192" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">150 train / 70 test real TCGA breast cancer samples</text>
+          </svg>
+        </div>
+      </div>
     </section>
 
     <section class="section">
@@ -484,8 +521,8 @@
         <div class="roadmap-item">
           <span class="stamp planned"><span class="dot"></span>Planned</span>
           <div class="ri-text">
-            <strong>Multi-omics Integration Capstone</strong>
-            <p>Integrating multiple omics layers (e.g. transcriptomics + genomics) into a unified analysis, with an interactive Power BI dashboard for results exploration.</p>
+            <strong>Power BI Dashboard for the Multi-Omics Capstone</strong>
+            <p>The multi-omics integration analysis itself is done (see Completed Projects); the data exports are ready, but the Power BI dashboard built from them is still to come.</p>
           </div>
         </div>
       </div>
