@@ -183,7 +183,7 @@
           <ul class="glance-list">
             <li><span class="k">Education</span><span class="v">M.S. Bioinformatics, Johns Hopkins (completed May 2026)</span></li>
             <li><span class="k">Experience</span><span class="v">3+ yrs, Pfizer &amp; Catalent (GMP/GLP)</span></li>
-            <li><span class="k">Completed</span><span class="v">RNA-seq DE, variant calling and ML classification</span></li>
+            <li><span class="k">Completed</span><span class="v">RNA-seq DE, variant calling, ML classification and portfolio analytics (SQL)</span></li>
             <li><span class="k">Next</span><span class="v">Gut microbiome diversity analysis (planned)</span></li>
             <li><span class="k">Contact</span><span class="v"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=melsaid2017@gmail.com" target="_blank" rel="noopener">melsaid2017@gmail.com</a></span></li>
           </ul>
@@ -213,13 +213,16 @@
 
           <!-- Row 2: ML / Data Analytics -->
           <text x="20" y="182" style="font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;fill:var(--muted)">ML / DATA ANALYTICS</text>
-          <line x1="20" y1="230" x2="600" y2="230" style="stroke:var(--rail);stroke-width:1"/>
+          <line x1="20" y1="230" x2="860" y2="230" style="stroke:var(--rail);stroke-width:1"/>
           <circle cx="260" cy="230" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
           <text x="260" y="210" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">ML Classification</text>
           <text x="260" y="252" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">RF · SVM · LogReg</text>
-          <circle cx="560" cy="230" r="6" style="fill:var(--slate);stroke:var(--panel);stroke-width:4"/>
-          <text x="560" y="210" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">AMR Classifier</text>
-          <text x="560" y="252" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">Genomic ML</text>
+          <circle cx="560" cy="230" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
+          <text x="560" y="210" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">Portfolio Analytics</text>
+          <text x="560" y="252" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">SQLite · SQL</text>
+          <circle cx="860" cy="230" r="6" style="fill:var(--slate);stroke:var(--panel);stroke-width:4"/>
+          <text x="860" y="210" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">AMR Classifier</text>
+          <text x="860" y="252" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">Genomic ML</text>
 
           <!-- Row 3: Multi-Omics -->
           <text x="20" y="322" style="font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;fill:var(--muted)">MULTI-OMICS</text>
@@ -251,6 +254,7 @@
           <h3>ML / Biotech Data Analytics</h3>
           <div class="rail">
             <div class="map-node"><span class="dot done"></span><strong>Biomedical ML Classification</strong><p>Random Forest · SVM · Logistic Regression</p></div>
+            <div class="map-node"><span class="dot done"></span><strong>Portfolio Analytics (SQL)</strong><p>SQLite · schema, core queries and a reporting layer over the real pipeline outputs above</p></div>
             <div class="map-node"><span class="dot planned"></span><strong>Antimicrobial Resistance Classifier</strong><p>Genomic + phenotypic ML features</p></div>
           </div>
         </div>
@@ -388,6 +392,44 @@
 
             <text x="10" y="172" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">bars: log2 fold change, dex vs untreated</text>
             <text x="10" y="192" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">airway smooth muscle · chr5, chr6, chr17 · 4 donors</text>
+          </svg>
+        </div>
+      </div>
+      <div class="proj-grid" style="margin-top:16px">
+        <article class="card">
+          <h3><span class="stamp done"><span class="dot"></span>Done</span>Bioinformatics Portfolio Analytics (SQL)</h3>
+          <p>A LIMS style SQLite schema (projects, runs, samples, variant calls, DE results, generic QC metrics) loaded with the real, already committed outputs of the RNA-seq, variant calling and ML classification pipelines above, not simulated data. Eight core SQL queries (joins, window functions, conditional aggregation for a pivot) plus a reporting script that writes each result to a CSV.</p>
+          <p class="result">Result: reproduces and cross checks the other projects' own headline numbers straight from their raw output files (108 DE genes, 71 PASS variants) and surfaces detail the source READMEs only summarized, such as the exact GATK filter reason behind every one of the 18 variants that did not pass.</p>
+          <div class="tech">
+            <span class="chip">SQLite</span><span class="chip">SQL</span><span class="chip">Python</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/MohamedElsaid-bit/bioinformatics-analytics-sql" target="_blank" rel="noopener">View Code →</a>
+          </div>
+        </article>
+        <div class="card figure-card">
+          <svg viewBox="0 0 380 210" role="img" aria-label="Raw candidate variants by filter outcome: 71 of 89 passed, 9 were filtered on strand bias, 8 on mapping quality, and 1 on quality by depth.">
+            <text x="10" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">71 / 89</text>
+            <text x="10" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">VARIANTS PASS FILTERING</text>
+            <line x1="10" y1="58" x2="370" y2="58" style="stroke:var(--rail);stroke-width:1"/>
+
+            <text x="10" y="86" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">PASS</text>
+            <rect x="75" y="76" width="259.4" height="10" rx="2" style="fill:var(--teal)"/>
+            <text x="340" y="85" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">71</text>
+
+            <text x="10" y="116" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">SOR3</text>
+            <rect x="75" y="106" width="32.9" height="10" rx="2" style="fill:var(--slate)"/>
+            <text x="340" y="115" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">9</text>
+
+            <text x="10" y="146" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">MQ40</text>
+            <rect x="75" y="136" width="29.2" height="10" rx="2" style="fill:var(--slate)"/>
+            <text x="340" y="145" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">8</text>
+
+            <text x="10" y="176" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">QD2</text>
+            <rect x="75" y="166" width="3.7" height="10" rx="2" style="fill:var(--slate)"/>
+            <text x="340" y="175" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">1</text>
+
+            <text x="10" y="200" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">SOR3 strand bias · MQ40 mapping quality · QD2 depth normalized quality</text>
           </svg>
         </div>
       </div>
