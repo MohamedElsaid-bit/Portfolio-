@@ -2,13 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <script>document.documentElement.classList.add('js')</script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mohamed Elsaid | Bioinformatics & Computational Biology Portfolio</title>
   <meta name="description" content="Bioinformatics, Machine Learning, GMP Data Integrity. Portfolio of Mohamed Elsaid, M.S. Bioinformatics (Johns Hopkins)" />
+  <link rel="canonical" href="https://mohamedelsaid-bit.github.io/Portfolio-/" />
   <meta property="og:title" content="Mohamed Elsaid | Bioinformatics Portfolio" />
   <meta property="og:description" content="Machine learning and NGS pipeline development by a former pharma QC scientist turned bioinformatician." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mohamedelsaid-bit.github.io/Portfolio-/" />
+  <meta property="og:image" content="https://mohamedelsaid-bit.github.io/Portfolio-/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Mohamed Elsaid, M.S. Bioinformatics, Johns Hopkins. Bioinformatics portfolio: 6 projects executed, 108 DE genes, 71 PASS variants, 3 years at Pfizer and Catalent." />
+  <meta property="og:site_name" content="Mohamed Elsaid" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mohamed Elsaid | Bioinformatics Portfolio" />
+  <meta name="twitter:description" content="Machine learning and NGS pipeline development by a former pharma QC scientist turned bioinformatician." />
+  <meta name="twitter:image" content="https://mohamedelsaid-bit.github.io/Portfolio-/og-image.png" />
+  <meta name="theme-color" content="#F5F7F5" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0F1512" media="(prefers-color-scheme: dark)" />
   <meta name="color-scheme" content="light dark" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20x='2'%20y='2'%20width='60'%20height='60'%20rx='14'%20fill='%23F5F7F5'%20stroke='%2316221F'%20stroke-width='2'/%3E%3Ctext%20x='32'%20y='41'%20font-family='IBM%20Plex%20Mono,monospace'%20font-size='24'%20font-weight='700'%20fill='%231F6E5C'%20text-anchor='middle'%3EME%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -20,29 +35,32 @@
       --muted: #5C6B66;
       --rail: #D7DEDA;
       --teal: #1F6E5C;
-      --amber: #B8863A;
       --slate: #7D8B93;
       --shadow: 0 1px 2px rgba(22,34,31,.05), 0 10px 28px rgba(22,34,31,.06);
+      --shadow-hover: 0 4px 10px rgba(22,34,31,.08), 0 16px 36px rgba(22,34,31,.12);
       --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
       --sans: 'IBM Plex Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
     @media (prefers-color-scheme: dark){
       :root{
         --paper:#0F1512; --panel:#151D19; --ink:#EAF1EC; --muted:#93A39C; --rail:#28352F;
-        --teal:#5FD6B4; --amber:#E3B15D; --slate:#8FA0A8;
+        --teal:#5FD6B4; --slate:#8FA0A8;
         --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.4);
+        --shadow-hover: 0 4px 10px rgba(0,0,0,.4), 0 16px 36px rgba(0,0,0,.45);
       }
     }
     *{box-sizing:border-box}
     html,body{height:100%}
+    html{scroll-behavior:auto}
+    @media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth} }
     body{margin:0;font:16px/1.6 var(--sans);background:var(--paper);color:var(--ink)}
     .container{max-width:1080px;margin:auto;padding:24px}
     a{color:inherit}
+    a:focus-visible, button:focus-visible, .btn:focus-visible, .link:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:4px}
 
     .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--muted)}
     .stamp{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:5px;border:1px solid currentColor}
     .stamp.done{color:var(--teal)}
-    .stamp.progress{color:var(--amber)}
     .stamp.planned{color:var(--slate)}
     .stamp .dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
 
@@ -57,8 +75,34 @@
     .links a:hover{border-color:var(--teal);color:var(--teal)}
     .links a.highlight{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 
+    /* document control grid, shared by the hero title block and the metrics strip */
+    .doc-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+    .doc-grid .cell{padding:10px 14px;border-right:1px solid var(--rail)}
+    .doc-grid .cell:last-child{border-right:none}
+    .doc-grid .label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+    .doc-grid .value{display:block;font-family:var(--mono);font-weight:600;font-size:13px}
+    .doc-header .status-effective{color:var(--teal)}
+    .metrics-strip{margin-top:22px}
+    .metrics-strip .cell{padding:16px}
+    .metrics-strip .num{display:block;font-family:var(--sans);font-weight:700;font-size:28px;color:var(--teal)}
+    .metrics-strip .label{display:block;font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:4px}
+    @media (max-width: 620px){
+      .doc-grid{grid-template-columns:repeat(2,1fr)}
+      .doc-grid .cell{border-right:none;border-bottom:1px solid var(--rail)}
+      .doc-grid .cell:nth-child(odd){border-right:1px solid var(--rail)}
+      .doc-grid .cell:nth-child(-n+2){border-bottom:1px solid var(--rail)}
+      .doc-grid .cell:nth-child(n+3){border-bottom:none}
+    }
+
     /* hero */
-    .hero{margin-top:36px}
+    .hero{position:relative;margin-top:36px;overflow:hidden}
+    .hero::before{
+      content:'';position:absolute;inset:-12px 0 0 0;z-index:-1;pointer-events:none;
+      background-image:linear-gradient(var(--rail) 1px, transparent 1px), linear-gradient(90deg, var(--rail) 1px, transparent 1px);
+      background-size:30px 30px;opacity:.4;
+      -webkit-mask-image:linear-gradient(to bottom, black, transparent);
+      mask-image:linear-gradient(to bottom, black, transparent);
+    }
     h1{font-size:34px;line-height:1.22;margin:14px 0 0;font-weight:600;max-width:20ch}
     .subtitle{color:var(--muted);margin-top:14px;max-width:62ch;font-size:15.5px}
     .cta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
@@ -68,12 +112,17 @@
     .btn.primary:hover{background:var(--teal);border-color:var(--teal);color:var(--paper)}
 
     /* sections */
-    .section{margin-top:52px}
+    .section{margin-top:52px;scroll-margin-top:84px}
+    .hero{scroll-margin-top:84px}
     .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap;border-bottom:1px solid var(--rail);padding-bottom:10px}
     .section h2{margin:0;font-size:13px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
     .section-sub{color:var(--muted);font-size:13px;margin:0}
+    @media (prefers-reduced-motion: no-preference){
+      html.js .reveal{opacity:0;transform:translateY(14px);transition:opacity 600ms ease, transform 600ms ease}
+      html.js .reveal.is-visible{opacity:1;transform:translateY(0)}
+    }
 
-    /* about, moved near top */
+    /* about */
     .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
     .panel{background:var(--panel);border:1px solid var(--rail);border-radius:10px;padding:22px;box-shadow:var(--shadow)}
     .panel p{margin:0 0 12px;font-size:14.5px}
@@ -85,8 +134,6 @@
     .glance-list .v{text-align:right}
 
     /* project map */
-    .map-image{background:var(--panel);border:1px solid var(--rail);border-radius:10px;padding:20px;box-shadow:var(--shadow);margin-bottom:18px}
-    .map-image svg{width:100%;height:auto;display:block}
     .map-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .map-track{background:var(--panel);border:1px solid var(--rail);border-radius:10px;padding:18px;box-shadow:var(--shadow)}
     .map-track h3{font-family:var(--mono);font-size:11px;margin:0 0 16px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
@@ -96,7 +143,6 @@
     .map-node:last-child{padding-bottom:0}
     .map-node .dot{position:absolute;left:0;top:5px;width:7px;height:7px;border-radius:50%;box-shadow:0 0 0 3px var(--panel)}
     .map-node .dot.done{background:var(--teal)}
-    .map-node .dot.progress{background:var(--amber)}
     .map-node .dot.planned{background:var(--slate)}
     .map-node strong{font-size:13.5px;display:block;line-height:1.3;font-weight:600}
     .map-node p{margin:4px 0 0;font-size:12px;color:var(--muted);line-height:1.45;font-family:var(--mono)}
@@ -104,10 +150,17 @@
 
     /* project cards */
     .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
-    .grid-featured{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .proj-grid + .proj-grid{margin-top:16px}
     .card{background:var(--panel);border:1px solid var(--rail);border-radius:10px;padding:20px;box-shadow:var(--shadow)}
-    .card.figure-card{display:flex;align-items:center}
+    @media (prefers-reduced-motion: no-preference){
+      .card{transition:transform 150ms ease, box-shadow 150ms ease}
+      .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+    }
+    .card.figure-card{display:flex;flex-direction:column;justify-content:center}
     .card.figure-card svg{width:100%;height:auto;display:block}
+    .fig-caption{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+    .figure-img-wrap{background:#fff;border-radius:8px;padding:12px}
+    .figure-img-wrap img{width:100%;height:auto;display:block;border-radius:4px}
     .card h3{margin:0 0 10px;font-size:16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-weight:600}
     .card .result{margin-top:12px;font-size:13px;color:var(--muted);border-left:2px solid var(--teal);padding-left:10px;font-family:var(--mono)}
     .tech{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
@@ -129,7 +182,6 @@
     @media (max-width: 900px){
       .about-grid{grid-template-columns:1fr}
       .map-grid{grid-template-columns:1fr}
-      .grid-featured{grid-template-columns:1fr}
       .proj-grid{grid-template-columns:1fr}
     }
     @media (max-width: 620px){
@@ -149,7 +201,7 @@
         </div>
       </a>
       <div class="links">
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=melsaid2017@gmail.com" target="_blank" rel="noopener">Email</a>
+        <a href="mailto:melsaid2017@gmail.com">Email</a>
         <a href="https://github.com/MohamedElsaid-bit" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/mohamed-elsaid-0a0b56231/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="highlight" href="Mohamed_Elsaid_Resume.pdf" target="_blank" rel="noopener">Resume</a>
@@ -159,7 +211,12 @@
 
   <main class="container">
     <section class="hero">
-      <span class="stamp done"><span class="dot"></span>Portfolio · Live</span>
+      <div class="doc-grid doc-header">
+        <div class="cell"><span class="label">Document</span><span class="value">Bioinformatics Portfolio</span></div>
+        <div class="cell"><span class="label">Doc No.</span><span class="value">PORT 001</span></div>
+        <div class="cell"><span class="label">Revision</span><span class="value">2026.10</span></div>
+        <div class="cell"><span class="label">Status</span><span class="value status-effective">● Effective</span></div>
+      </div>
       <h1>Bridging pharmaceutical rigor with computational biology.</h1>
       <p class="subtitle">M.S. in Bioinformatics from Johns Hopkins (completed May 2026) with three years of industry experience in GMP and GLP data integrity at Pfizer and Catalent. I apply that same standard of validation and documentation to NGS pipeline development and machine learning.</p>
       <div class="cta">
@@ -167,9 +224,15 @@
         <a class="btn" href="#map">Project Map</a>
         <a class="btn" href="Mohamed_Elsaid_Resume.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
+      <div class="doc-grid metrics-strip">
+        <div class="cell"><span class="num">6</span><span class="label">Projects executed</span></div>
+        <div class="cell"><span class="num">108</span><span class="label">DE genes, RNA-seq</span></div>
+        <div class="cell"><span class="num">71</span><span class="label">PASS variants, GATK4</span></div>
+        <div class="cell"><span class="num">3 yrs</span><span class="label">Pfizer · Catalent</span></div>
+      </div>
     </section>
 
-    <section id="about" class="section">
+    <section id="about" class="section reveal">
       <div class="section-head">
         <h2>About</h2>
         <p class="section-sub">Background, credentials, and what I'm looking for.</p>
@@ -185,61 +248,16 @@
             <li><span class="k">Experience</span><span class="v">3+ yrs, Pfizer &amp; Catalent (GMP/GLP)</span></li>
             <li><span class="k">Completed</span><span class="v">All 6 pipeline projects: RNA-seq DE, variant calling, ML classification, portfolio analytics (SQL), gut microbiome diversity and multi-omics integration</span></li>
             <li><span class="k">Next</span><span class="v">Applying to entry-level Bioinformatics Analyst/Scientist and Computational Biologist roles</span></li>
-            <li><span class="k">Contact</span><span class="v"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=melsaid2017@gmail.com" target="_blank" rel="noopener">melsaid2017@gmail.com</a></span></li>
+            <li><span class="k">Contact</span><span class="v"><a href="mailto:melsaid2017@gmail.com">melsaid2017@gmail.com</a></span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="map" class="section">
+    <section id="map" class="section reveal">
       <div class="section-head">
         <h2>Project Map</h2>
         <p class="section-sub">Three tracks, one standard: version-controlled, documented, reproducible.</p>
-      </div>
-      <div class="map-image">
-        <svg viewBox="0 0 1000 480" role="img" aria-label="Diagram of three project tracks: NGS Pipelines, ML and Data Analytics, and Multi-Omics Integration, each with completed, in-progress, and planned projects.">
-          <!-- Row 1: NGS Pipelines -->
-          <text x="20" y="42" style="font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;fill:var(--muted)">NGS PIPELINES</text>
-          <line x1="20" y1="90" x2="900" y2="90" style="stroke:var(--rail);stroke-width:1"/>
-          <circle cx="260" cy="90" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
-          <text x="260" y="70" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">RNA-seq DE</text>
-          <text x="260" y="112" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">STAR · DESeq2</text>
-          <circle cx="560" cy="90" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
-          <text x="560" y="70" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">Variant Calling</text>
-          <text x="560" y="112" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">GATK4 · BWA-MEM</text>
-          <circle cx="860" cy="90" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
-          <text x="860" y="70" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">Gut Microbiome</text>
-          <text x="860" y="112" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">16S · DADA2</text>
-
-          <!-- Row 2: ML / Data Analytics -->
-          <text x="20" y="182" style="font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;fill:var(--muted)">ML / DATA ANALYTICS</text>
-          <line x1="20" y1="230" x2="860" y2="230" style="stroke:var(--rail);stroke-width:1"/>
-          <circle cx="260" cy="230" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
-          <text x="260" y="210" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">ML Classification</text>
-          <text x="260" y="252" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">RF · SVM · LogReg</text>
-          <circle cx="560" cy="230" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
-          <text x="560" y="210" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">Portfolio Analytics</text>
-          <text x="560" y="252" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">SQLite · SQL</text>
-          <circle cx="860" cy="230" r="6" style="fill:var(--slate);stroke:var(--panel);stroke-width:4"/>
-          <text x="860" y="210" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">AMR Classifier</text>
-          <text x="860" y="252" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">Genomic ML</text>
-
-          <!-- Row 3: Multi-Omics -->
-          <text x="20" y="322" style="font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;fill:var(--muted)">MULTI-OMICS</text>
-          <line x1="20" y1="370" x2="300" y2="370" style="stroke:var(--rail);stroke-width:1"/>
-          <circle cx="260" cy="370" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
-          <text x="260" y="350" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">Multi-Omics Capstone</text>
-          <text x="260" y="392" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">DIABLO · mixOmics</text>
-
-          <!-- Legend -->
-          <line x1="0" y1="428" x2="1000" y2="428" style="stroke:var(--rail);stroke-width:1"/>
-          <circle cx="260" cy="458" r="5" style="fill:var(--teal)"/>
-          <text x="274" y="462" style="font-family:var(--mono);font-size:11px;fill:var(--muted)">COMPLETED</text>
-          <circle cx="470" cy="458" r="5" style="fill:var(--amber)"/>
-          <text x="484" y="462" style="font-family:var(--mono);font-size:11px;fill:var(--muted)">IN PROGRESS</text>
-          <circle cx="690" cy="458" r="5" style="fill:var(--slate)"/>
-          <text x="704" y="462" style="font-family:var(--mono);font-size:11px;fill:var(--muted)">PLANNED</text>
-        </svg>
       </div>
       <div class="map-grid">
         <div class="map-track">
@@ -267,102 +285,21 @@
       </div>
       <div class="map-legend">
         <span class="stamp done"><span class="dot"></span>Completed</span>
-        <span class="stamp progress"><span class="dot"></span>In Progress</span>
         <span class="stamp planned"><span class="dot"></span>Planned</span>
       </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="projects" class="section reveal">
       <div class="section-head">
         <h2>Completed Projects</h2>
         <p class="section-sub">Public, version-controlled, and documented end to end.</p>
       </div>
+
       <div class="proj-grid">
         <article class="card">
-          <h3><span class="stamp done"><span class="dot"></span>Done</span>Biomedical ML Classification Pipeline</h3>
-          <p>Two part scikit-learn benchmark. Part 1: Random Forest, Logistic Regression and SVM on the tutorial level Wisconsin Breast Cancer dataset, with 5-fold cross-validation. Part 2: the same leakage-free discipline on a real, high dimensional omics dataset, 801 real TCGA tumor samples with 20,531 gene expression features each, using training-fold-only feature selection to classify 5 cancer types.</p>
-          <p class="result">Result: 98.3% test accuracy (Part 1, binary). 99.4% test accuracy classifying 5 real TCGA tumor types from 20,531 genes (Part 2), honestly explained: tissue of origin separates almost linearly in bulk RNA-seq, which is why accuracy is this high.</p>
-          <div class="tech">
-            <span class="chip">Python</span><span class="chip">scikit-learn</span><span class="chip">Random Forest</span><span class="chip">SVM</span>
-          </div>
-          <div class="actions">
-            <a class="link" href="https://github.com/MohamedElsaid-bit/biomedical-ml-classification" target="_blank" rel="noopener">View Code →</a>
-          </div>
-        </article>
-        <div class="card figure-card">
-          <svg viewBox="0 0 380 250" role="img" aria-label="Held-out test set results: Logistic Regression and SVM reached 98.3% accuracy and 0.995 ROC-AUC; Random Forest reached 95.6% accuracy and 0.994 ROC-AUC.">
-            <text x="10" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">98.3%</text>
-            <text x="10" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">TOP TEST ACCURACY</text>
-            <text x="200" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">0.995</text>
-            <text x="200" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">TOP ROC-AUC</text>
-            <line x1="10" y1="58" x2="370" y2="58" style="stroke:var(--rail);stroke-width:1"/>
-
-            <text x="10" y="82" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">Logistic Reg.</text>
-            <rect x="115" y="72" width="201.6" height="8" rx="2" style="fill:var(--teal)"/>
-            <text x="330" y="79" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">98.3%</text>
-            <rect x="115" y="84" width="204" height="8" rx="2" style="fill:var(--slate)"/>
-            <text x="330" y="91" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">.995</text>
-
-            <text x="10" y="122" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">SVM (RBF)</text>
-            <rect x="115" y="112" width="201.6" height="8" rx="2" style="fill:var(--teal)"/>
-            <text x="330" y="119" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">98.3%</text>
-            <rect x="115" y="124" width="204" height="8" rx="2" style="fill:var(--slate)"/>
-            <text x="330" y="131" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">.995</text>
-
-            <text x="10" y="162" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">Random Forest</text>
-            <rect x="115" y="152" width="196" height="8" rx="2" style="fill:var(--teal)"/>
-            <text x="330" y="159" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">95.6%</text>
-            <rect x="115" y="164" width="203.8" height="8" rx="2" style="fill:var(--slate)"/>
-            <text x="330" y="171" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">.994</text>
-
-            <circle cx="115" cy="196" r="4" style="fill:var(--teal)"/>
-            <text x="125" y="200" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">Test Accuracy</text>
-            <circle cx="230" cy="196" r="4" style="fill:var(--slate)"/>
-            <text x="240" y="200" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">ROC-AUC</text>
-
-            <text x="10" y="228" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">Wisconsin Breast Cancer dataset · held-out</text>
-            <text x="10" y="240" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">test set · academic/portfolio use only</text>
-          </svg>
-        </div>
-      </div>
-      <div class="proj-grid" style="margin-top:16px">
-        <article class="card">
-          <h3><span class="stamp done"><span class="dot"></span>Done</span>Germline Variant Calling Pipeline</h3>
-          <p>GATK4 best practices workflow orchestrated with Snakemake: BWA-MEM alignment, duplicate marking, base quality recalibration, HaplotypeCaller, and separate hard filtering of SNPs and indels. Run end to end on real chr21 reference and known sites (dbSNP, Mills) with simulated reads from the nf-core test data, which the README states plainly.</p>
-          <p class="result">Result: 89 raw candidate variants, 71 PASS after hard filtering (68 SNPs, 3 indels). Ti/Tv of 0.26 and 0% dbSNP concordance are reported and explained as expected artifacts of simulated reads.</p>
-          <div class="tech">
-            <span class="chip">GATK4</span><span class="chip">Snakemake</span><span class="chip">BWA-MEM</span><span class="chip">bcftools</span>
-          </div>
-          <div class="actions">
-            <a class="link" href="https://github.com/MohamedElsaid-bit/variant-calling-pipeline" target="_blank" rel="noopener">View Code →</a>
-          </div>
-        </article>
-        <div class="card figure-card">
-          <svg viewBox="0 0 380 190" role="img" aria-label="Variant counts: 89 raw candidate variants from HaplotypeCaller, 71 passing hard filters (68 SNPs and 3 indels).">
-            <text x="10" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">71</text>
-            <text x="10" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">PASS VARIANTS</text>
-            <text x="200" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">89</text>
-            <text x="200" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">RAW CANDIDATES</text>
-            <line x1="10" y1="58" x2="370" y2="58" style="stroke:var(--rail);stroke-width:1"/>
-
-            <text x="10" y="86" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">Raw calls</text>
-            <rect x="95" y="76" width="200" height="10" rx="2" style="fill:var(--slate)"/>
-            <text x="305" y="85" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">89</text>
-
-            <text x="10" y="116" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">PASS</text>
-            <rect x="95" y="106" width="160" height="10" rx="2" style="fill:var(--teal)"/>
-            <text x="305" y="115" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">71</text>
-
-            <text x="10" y="146" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">PASS = 68 SNPs + 3 indels, GATK hard filters</text>
-            <text x="10" y="170" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">chr21 reference · simulated reads (nf-core test data)</text>
-          </svg>
-        </div>
-      </div>
-      <div class="proj-grid" style="margin-top:16px">
-        <article class="card">
           <h3><span class="stamp done"><span class="dot"></span>Done</span>RNA-seq Differential Expression Pipeline</h3>
-          <p>Snakemake workflow (FastQC, Trimmomatic, STAR, featureCounts, DESeq2, clusterProfiler GSEA, MultiQC) run end to end on public airway smooth muscle data (GEO GSE52778, dexamethasone versus untreated, 4 donors, paired design). Scoped to chr5, chr6 and chr17 and the first 5 million read pairs per sample so it runs on a laptop, which the README states plainly.</p>
-          <p class="result">Result: 108 differentially expressed genes (61 up, 47 down). The known dexamethasone genes DUSP1, PER1 and FKBP5 are all strongly induced, and PCA separates treated from untreated with no overlap. Reported and explained: 21 to 24% unique mapping (whole genome reads against a three chromosome reference) and no significant Hallmark gene sets at this scale.</p>
+          <p>Snakemake workflow (FastQC, Trimmomatic, STAR, DESeq2, clusterProfiler GSEA) run end to end on public airway dexamethasone data (GEO GSE52778), scoped to three chromosomes so it runs on a laptop.</p>
+          <p class="result">Result: 108 differentially expressed genes (61 up, 47 down); known dexamethasone genes DUSP1, PER1, and FKBP5 are all strongly induced. Honest caveat: scoped to three chromosomes, so the 21 to 24% unique mapping rate reflects whole genome reads against a partial reference.</p>
           <div class="tech">
             <span class="chip">Snakemake</span><span class="chip">STAR</span><span class="chip">DESeq2</span><span class="chip">R</span>
           </div>
@@ -371,35 +308,98 @@
           </div>
         </article>
         <div class="card figure-card">
-          <svg viewBox="0 0 380 210" role="img" aria-label="RNA-seq results: 108 differentially expressed genes (61 up, 47 down). Known dexamethasone genes DUSP1, PER1 and FKBP5 are induced with log2 fold changes of 2.99, 3.04 and 3.85.">
-            <text x="10" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">108</text>
-            <text x="10" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">DE GENES (61 UP, 47 DOWN)</text>
-            <text x="250" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">3 of 3</text>
-            <text x="250" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">KNOWN GENES UP</text>
-            <line x1="10" y1="58" x2="370" y2="58" style="stroke:var(--rail);stroke-width:1"/>
-
-            <text x="10" y="86" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">DUSP1</text>
-            <rect x="75" y="76" width="149.5" height="10" rx="2" style="fill:var(--teal)"/>
-            <text x="234" y="85" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">2.99</text>
-
-            <text x="10" y="116" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">PER1</text>
-            <rect x="75" y="106" width="152" height="10" rx="2" style="fill:var(--teal)"/>
-            <text x="237" y="115" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">3.04</text>
-
-            <text x="10" y="146" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">FKBP5</text>
-            <rect x="75" y="136" width="192.5" height="10" rx="2" style="fill:var(--teal)"/>
-            <text x="277" y="145" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">3.85</text>
-
-            <text x="10" y="172" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">bars: log2 fold change, dex vs untreated</text>
-            <text x="10" y="192" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">airway smooth muscle · chr5, chr6, chr17 · 4 donors</text>
-          </svg>
+          <span class="fig-caption">Fig. 1</span>
+          <div class="figure-img-wrap">
+            <img src="figures/rnaseq_volcano_plot.png" width="1200" height="900" loading="lazy" alt="Volcano plot of differential expression, dex versus untreated. 61 genes upregulated and 47 downregulated at adjusted p below 0.05 and absolute log2 fold change above 1. DUSP1, PER1 and FKBP5 among the top upregulated genes." />
+          </div>
         </div>
       </div>
-      <div class="proj-grid" style="margin-top:16px">
+
+      <div class="proj-grid">
+        <article class="card">
+          <h3><span class="stamp done"><span class="dot"></span>Done</span>Germline Variant Calling Pipeline</h3>
+          <p>GATK4 best practices (BWA-MEM, MarkDuplicates, BQSR, HaplotypeCaller, hard filtering) orchestrated with Snakemake, run end to end on the real chr21 reference with simulated reads.</p>
+          <p class="result">Result: 71 PASS variants from 89 raw candidates (68 SNPs, 3 indels). Honest caveat: Ti/Tv of 0.26 and 0% dbSNP concordance are expected artifacts of the simulated reads, reported and explained rather than hidden.</p>
+          <div class="tech">
+            <span class="chip">GATK4</span><span class="chip">Snakemake</span><span class="chip">BWA-MEM</span><span class="chip">bcftools</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/MohamedElsaid-bit/variant-calling-pipeline" target="_blank" rel="noopener">View Code →</a>
+          </div>
+        </article>
+        <div class="card figure-card">
+          <span class="fig-caption">Fig. 2</span>
+          <div class="figure-img-wrap">
+            <img src="figures/variant_calling_counts.png" width="1050" height="750" loading="lazy" alt="Bar chart of variant counts before and after hard filtering on chromosome 21 test data. 89 raw candidates from HaplotypeCaller, 71 PASS after filtering, 68 SNPs and 3 indels." />
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-grid">
+        <article class="card">
+          <h3><span class="stamp done"><span class="dot"></span>Done</span>Multi-Omics Integration Capstone</h3>
+          <p>DIABLO (mixOmics) integration of real, matched TCGA breast cancer data: mRNA expression, miRNA expression, and protein (RPPA), measured on the same patients, to predict molecular subtype.</p>
+          <p class="result">Result: mRNA alone reaches 98.6% test accuracy; the 3 block integrated model reaches 94.3%, predicting on test samples missing the protein block entirely. Honest caveat: integration did not beat the single best block here, its real value is staying accurate despite a missing omics layer.</p>
+          <div class="tech">
+            <span class="chip">mixOmics</span><span class="chip">DIABLO</span><span class="chip">R</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/MohamedElsaid-bit/multi-omics-integration-capstone" target="_blank" rel="noopener">View Code →</a>
+          </div>
+        </article>
+        <div class="card figure-card">
+          <span class="fig-caption">Fig. 3</span>
+          <div class="figure-img-wrap">
+            <img src="figures/multiomics_pca_mrna.png" width="825" height="675" loading="lazy" alt="PCA of mRNA expression alone, colored by breast cancer molecular subtype. Basal, Her2, and Luminal A form visually distinct clusters using only the first two principal components." />
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-grid">
+        <article class="card">
+          <h3><span class="stamp done"><span class="dot"></span>Done</span>Gut Microbiome Diversity Analysis</h3>
+          <p>DADA2 ASV inference, SILVA taxonomy, and phyloseq/vegan diversity analysis on real paired-end 16S rRNA data from mouse fecal samples, comparing community diversity and composition early versus late post weaning.</p>
+          <p class="result">Result: PERMANOVA finds a significant community composition shift (R squared 0.430, p = 0.001) despite no significant difference in alpha diversity. ANCOM-BC2 finds 9 genera significantly differentially abundant between time points.</p>
+          <div class="tech">
+            <span class="chip">DADA2</span><span class="chip">phyloseq</span><span class="chip">vegan</span><span class="chip">ANCOM-BC2</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/MohamedElsaid-bit/gut-microbiome-diversity-analysis" target="_blank" rel="noopener">View Code →</a>
+          </div>
+        </article>
+        <div class="card figure-card">
+          <span class="fig-caption">Fig. 4</span>
+          <div class="figure-img-wrap">
+            <img src="figures/gutmicrobiome_pcoa.png" width="900" height="750" loading="lazy" alt="PCoA ordination of Bray-Curtis dissimilarity, colored by early versus late post weaning time point. PERMANOVA R squared 0.430, p equals 0.001." />
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-grid">
+        <article class="card">
+          <h3><span class="stamp done"><span class="dot"></span>Done</span>Biomedical ML Classification Pipeline</h3>
+          <p>Two part scikit-learn benchmark: Random Forest, Logistic Regression, and SVM on the tutorial level Wisconsin dataset, then the same leakage-free discipline on real TCGA pan cancer RNA-seq data (801 samples, 20,531 genes).</p>
+          <p class="result">Result: 98.3% test accuracy on Wisconsin; 99.4% classifying 5 real cancer types from TCGA. Honest caveat: that accuracy is high because tissue of origin separates almost linearly in bulk RNA-seq, not because the task is clinically hard.</p>
+          <div class="tech">
+            <span class="chip">Python</span><span class="chip">scikit-learn</span><span class="chip">Random Forest</span><span class="chip">SVM</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/MohamedElsaid-bit/biomedical-ml-classification" target="_blank" rel="noopener">View Code →</a>
+          </div>
+        </article>
+        <div class="card figure-card">
+          <span class="fig-caption">Fig. 5</span>
+          <div class="figure-img-wrap">
+            <img src="figures/ml_tcga_pca.png" width="900" height="750" loading="lazy" alt="PCA of 500 ANOVA selected genes across 801 real TCGA tumor samples, colored by cancer type. Five cancer types form visually distinct clusters." />
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-grid">
         <article class="card">
           <h3><span class="stamp done"><span class="dot"></span>Done</span>Bioinformatics Portfolio Analytics (SQL)</h3>
-          <p>A LIMS style SQLite schema (projects, runs, samples, variant calls, DE results, generic QC metrics) loaded with the real, already committed outputs of all 5 pipelines above, not simulated data. Eight core SQL queries (joins, window functions, conditional aggregation for a pivot) plus a reporting script that writes each result to a CSV.</p>
-          <p class="result">Result: reproduces and cross checks the other projects' own headline numbers straight from their raw output files (108 DE genes, 71 PASS variants) and surfaces detail the source READMEs only summarized, such as the exact GATK filter reason behind every one of the 18 variants that did not pass.</p>
+          <p>A LIMS style SQLite schema loaded with the real, already committed outputs of all 5 pipelines above, not simulated data. Eight SQL queries (joins, window functions, conditional aggregation) plus a reporting script.</p>
+          <p class="result">Result: reproduces the other projects' own headline numbers straight from their raw output files (108 DE genes, 71 PASS variants) and surfaces the exact GATK filter reason behind each of the 18 variants that did not pass.</p>
           <div class="tech">
             <span class="chip">SQLite</span><span class="chip">SQL</span><span class="chip">Python</span>
           </div>
@@ -408,6 +408,7 @@
           </div>
         </article>
         <div class="card figure-card">
+          <span class="fig-caption">Fig. 6</span>
           <svg viewBox="0 0 380 210" role="img" aria-label="Raw candidate variants by filter outcome: 71 of 89 passed, 9 were filtered on strand bias, 8 on mapping quality, and 1 on quality by depth.">
             <text x="10" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">71 / 89</text>
             <text x="10" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">VARIANTS PASS FILTERING</text>
@@ -433,79 +434,9 @@
           </svg>
         </div>
       </div>
-      <div class="proj-grid" style="margin-top:16px">
-        <article class="card">
-          <h3><span class="stamp done"><span class="dot"></span>Done</span>Gut Microbiome Diversity Analysis</h3>
-          <p>DADA2 ASV inference, SILVA taxonomy assignment, and phyloseq/vegan diversity analysis on real paired-end 16S rRNA data from mouse fecal samples (the Kozich et al. 2013 MiSeq SOP dataset), comparing community diversity and composition early versus late post weaning.</p>
-          <p class="result">Result: PERMANOVA finds a significant community composition shift (R-squared 0.430, p = 0.001) despite no significant difference in alpha diversity. ANCOM-BC2 finds 9 genera significantly differentially abundant between time points, with the compositional bias correction that a plain proportion comparison would miss.</p>
-          <div class="tech">
-            <span class="chip">DADA2</span><span class="chip">phyloseq</span><span class="chip">vegan</span><span class="chip">ANCOM-BC2</span>
-          </div>
-          <div class="actions">
-            <a class="link" href="https://github.com/MohamedElsaid-bit/gut-microbiome-diversity-analysis" target="_blank" rel="noopener">View Code →</a>
-          </div>
-        </article>
-        <div class="card figure-card">
-          <svg viewBox="0 0 380 210" role="img" aria-label="PERMANOVA on Bray-Curtis dissimilarity: time group explains 43 percent of variance in community composition, p equals 0.001. 9 of 43 testable genera are significantly differentially abundant by ANCOM-BC2.">
-            <text x="10" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">R2 = 0.43</text>
-            <text x="10" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">PERMANOVA, P = 0.001</text>
-            <text x="250" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">9 / 43</text>
-            <text x="250" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">GENERA SHIFTED</text>
-            <line x1="10" y1="58" x2="370" y2="58" style="stroke:var(--rail);stroke-width:1"/>
-
-            <text x="10" y="82" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">Shannon diversity</text>
-            <text x="330" y="82" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">p=0.113</text>
-            <text x="10" y="106" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">Not significant, early vs late</text>
-
-            <text x="10" y="136" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">Bray-Curtis composition</text>
-            <text x="330" y="136" style="font-family:var(--mono);font-size:9.5px;fill:var(--teal)">p=0.001</text>
-            <text x="10" y="160" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">Significant: diversity is similar,</text>
-            <text x="10" y="174" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">composition is not</text>
-
-            <text x="10" y="200" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">218 ASVs · 19 real mouse fecal samples · 999 permutations</text>
-          </svg>
-        </div>
-      </div>
-      <div class="proj-grid" style="margin-top:16px">
-        <article class="card">
-          <h3><span class="stamp done"><span class="dot"></span>Done</span>Multi-Omics Integration Capstone</h3>
-          <p>DIABLO multi-omics integration (mixOmics) on real, matched TCGA breast cancer data: mRNA expression, miRNA expression, and RPPA protein, measured on the same patients. Benchmarks a sparse 3-block integrated model against what each omics layer predicts molecular subtype alone.</p>
-          <p class="result">Result: mRNA expression alone already reaches 98.6% test accuracy; the integrated model reaches 94.3% with a sparse 45-feature signature, predicting on test samples missing the protein block entirely. Reported honestly: integration did not beat the single best block here, its real value is predicting robustly despite a missing omics layer.</p>
-          <div class="tech">
-            <span class="chip">mixOmics</span><span class="chip">DIABLO</span><span class="chip">R</span>
-          </div>
-          <div class="actions">
-            <a class="link" href="https://github.com/MohamedElsaid-bit/multi-omics-integration-capstone" target="_blank" rel="noopener">View Code →</a>
-          </div>
-        </article>
-        <div class="card figure-card">
-          <svg viewBox="0 0 380 210" role="img" aria-label="Model comparison: mRNA alone reaches 98.6 percent test accuracy, miRNA alone 84.3 percent, the 3 block DIABLO integration 94.3 percent predicting without the protein block.">
-            <text x="10" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">98.6%</text>
-            <text x="10" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">BEST SINGLE BLOCK (MRNA)</text>
-            <text x="250" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">94.3%</text>
-            <text x="250" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">INTEGRATED, 2 OF 3 BLOCKS</text>
-            <line x1="10" y1="58" x2="370" y2="58" style="stroke:var(--rail);stroke-width:1"/>
-
-            <text x="10" y="82" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">mRNA alone</text>
-            <rect x="115" y="72" width="201.6" height="8" rx="2" style="fill:var(--teal)"/>
-            <text x="330" y="79" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">98.6%</text>
-
-            <text x="10" y="112" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">miRNA alone</text>
-            <rect x="115" y="102" width="172" height="8" rx="2" style="fill:var(--slate)"/>
-            <text x="330" y="109" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">84.3%</text>
-
-            <text x="10" y="142" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">DIABLO integrated</text>
-            <rect x="115" y="132" width="192.5" height="8" rx="2" style="fill:var(--teal)"/>
-            <text x="330" y="139" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">94.3%</text>
-
-            <text x="10" y="172" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">Protein block: 14.5% CV error, no test data</text>
-            <text x="10" y="192" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">150 train / 70 test real TCGA breast cancer samples</text>
-          </svg>
-        </div>
-      </div>
     </section>
 
-    <section class="section">
+    <section class="section reveal">
       <div class="section-head">
         <h2>Roadmap</h2>
         <p class="section-sub">Next pipelines in active development, in build order.</p>
@@ -521,21 +452,34 @@
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section reveal">
       <div class="section-head">
         <h2>Contact</h2>
         <p class="section-sub">Open to entry-level bioinformatics, computational biology, and data science roles.</p>
       </div>
       <div class="panel">
-        <p style="margin-top:0"><a class="link" href="https://mail.google.com/mail/?view=cm&fs=1&to=melsaid2017@gmail.com" target="_blank" rel="noopener">Email</a> &nbsp; <a class="link" href="https://github.com/MohamedElsaid-bit" target="_blank" rel="noopener">GitHub</a> &nbsp; <a class="link" href="https://www.linkedin.com/in/mohamed-elsaid-0a0b56231/" target="_blank" rel="noopener">LinkedIn</a> &nbsp; <a class="link" href="Mohamed_Elsaid_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a></p>
+        <p><a class="link" href="mailto:melsaid2017@gmail.com">Email</a> &nbsp; <a class="link" href="https://github.com/MohamedElsaid-bit" target="_blank" rel="noopener">GitHub</a> &nbsp; <a class="link" href="https://www.linkedin.com/in/mohamed-elsaid-0a0b56231/" target="_blank" rel="noopener">LinkedIn</a> &nbsp; <a class="link" href="Mohamed_Elsaid_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a></p>
       </div>
     </section>
 
     <footer>
-      © <span id="y"></span> Mohamed Elsaid · Rev 2026.09
+      © <span id="y"></span> Mohamed Elsaid · Rev 2026.10
     </footer>
   </main>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function(){
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function(el){ el.classList.add('is-visible') }); return; }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting){ entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+        });
+      }, {threshold:0.12});
+      els.forEach(function(el){ io.observe(el) });
+    })();
+  </script>
 </body>
 </html>
