@@ -183,8 +183,8 @@
           <ul class="glance-list">
             <li><span class="k">Education</span><span class="v">M.S. Bioinformatics, Johns Hopkins (completed May 2026)</span></li>
             <li><span class="k">Experience</span><span class="v">3+ yrs, Pfizer &amp; Catalent (GMP/GLP)</span></li>
-            <li><span class="k">Completed</span><span class="v">RNA-seq DE, variant calling, ML classification and portfolio analytics (SQL)</span></li>
-            <li><span class="k">Next</span><span class="v">Gut microbiome diversity analysis (planned)</span></li>
+            <li><span class="k">Completed</span><span class="v">RNA-seq DE, variant calling, ML classification, portfolio analytics (SQL) and gut microbiome diversity</span></li>
+            <li><span class="k">Next</span><span class="v">Multi-omics integration capstone (planned)</span></li>
             <li><span class="k">Contact</span><span class="v"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=melsaid2017@gmail.com" target="_blank" rel="noopener">melsaid2017@gmail.com</a></span></li>
           </ul>
         </div>
@@ -207,9 +207,9 @@
           <circle cx="560" cy="90" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
           <text x="560" y="70" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">Variant Calling</text>
           <text x="560" y="112" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">GATK4 · BWA-MEM</text>
-          <circle cx="860" cy="90" r="6" style="fill:var(--slate);stroke:var(--panel);stroke-width:4"/>
+          <circle cx="860" cy="90" r="6" style="fill:var(--teal);stroke:var(--panel);stroke-width:4"/>
           <text x="860" y="70" text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:var(--ink)">Gut Microbiome</text>
-          <text x="860" y="112" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">16S · QIIME2</text>
+          <text x="860" y="112" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">16S · DADA2</text>
 
           <!-- Row 2: ML / Data Analytics -->
           <text x="20" y="182" style="font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;fill:var(--muted)">ML / DATA ANALYTICS</text>
@@ -247,7 +247,7 @@
           <div class="rail">
             <div class="map-node"><span class="dot done"></span><strong>RNA-seq Differential Expression</strong><p>STAR · DESeq2 · Snakemake: complete on airway data, scoped to three chromosomes</p></div>
             <div class="map-node"><span class="dot done"></span><strong>Germline Variant Calling</strong><p>GATK4 · BWA-MEM · Snakemake: complete on chr21 with simulated reads</p></div>
-            <div class="map-node"><span class="dot planned"></span><strong>Gut Microbiome Diversity</strong><p>16S / metagenomics · QIIME2</p></div>
+            <div class="map-node"><span class="dot done"></span><strong>Gut Microbiome Diversity</strong><p>DADA2 · phyloseq · ANCOM-BC2: complete on real mouse fecal 16S data</p></div>
           </div>
         </div>
         <div class="map-track">
@@ -433,6 +433,39 @@
           </svg>
         </div>
       </div>
+      <div class="proj-grid" style="margin-top:16px">
+        <article class="card">
+          <h3><span class="stamp done"><span class="dot"></span>Done</span>Gut Microbiome Diversity Analysis</h3>
+          <p>DADA2 ASV inference, SILVA taxonomy assignment, and phyloseq/vegan diversity analysis on real paired-end 16S rRNA data from mouse fecal samples (the Kozich et al. 2013 MiSeq SOP dataset), comparing community diversity and composition early versus late post weaning.</p>
+          <p class="result">Result: PERMANOVA finds a significant community composition shift (R-squared 0.430, p = 0.001) despite no significant difference in alpha diversity. ANCOM-BC2 finds 9 genera significantly differentially abundant between time points, with the compositional bias correction that a plain proportion comparison would miss.</p>
+          <div class="tech">
+            <span class="chip">DADA2</span><span class="chip">phyloseq</span><span class="chip">vegan</span><span class="chip">ANCOM-BC2</span>
+          </div>
+          <div class="actions">
+            <a class="link" href="https://github.com/MohamedElsaid-bit/gut-microbiome-diversity-analysis" target="_blank" rel="noopener">View Code →</a>
+          </div>
+        </article>
+        <div class="card figure-card">
+          <svg viewBox="0 0 380 210" role="img" aria-label="PERMANOVA on Bray-Curtis dissimilarity: time group explains 43 percent of variance in community composition, p equals 0.001. 9 of 43 testable genera are significantly differentially abundant by ANCOM-BC2.">
+            <text x="10" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">R2 = 0.43</text>
+            <text x="10" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">PERMANOVA, P = 0.001</text>
+            <text x="250" y="26" style="font-family:var(--sans);font-size:22px;font-weight:700;fill:var(--teal)">9 / 43</text>
+            <text x="250" y="42" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;fill:var(--muted)">GENERA SHIFTED</text>
+            <line x1="10" y1="58" x2="370" y2="58" style="stroke:var(--rail);stroke-width:1"/>
+
+            <text x="10" y="82" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">Shannon diversity</text>
+            <text x="330" y="82" style="font-family:var(--mono);font-size:9.5px;fill:var(--muted)">p=0.113</text>
+            <text x="10" y="106" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">Not significant, early vs late</text>
+
+            <text x="10" y="136" style="font-family:var(--mono);font-size:11px;fill:var(--ink)">Bray-Curtis composition</text>
+            <text x="330" y="136" style="font-family:var(--mono);font-size:9.5px;fill:var(--teal)">p=0.001</text>
+            <text x="10" y="160" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">Significant: diversity is similar,</text>
+            <text x="10" y="174" style="font-family:var(--mono);font-size:10px;fill:var(--muted)">composition is not</text>
+
+            <text x="10" y="200" style="font-family:var(--mono);font-size:9px;fill:var(--muted)">218 ASVs · 19 real mouse fecal samples · 999 permutations</text>
+          </svg>
+        </div>
+      </div>
     </section>
 
     <section class="section">
@@ -446,13 +479,6 @@
           <div class="ri-text">
             <strong>ML Drug / Antimicrobial Resistance Classifier</strong>
             <p>Classifier predicting antimicrobial resistance from genomic/phenotypic features.</p>
-          </div>
-        </div>
-        <div class="roadmap-item">
-          <span class="stamp planned"><span class="dot"></span>Planned</span>
-          <div class="ri-text">
-            <strong>Human Gut Microbiome Diversity Analysis</strong>
-            <p>Diversity and composition analysis from 16S/metagenomic sequencing data.</p>
           </div>
         </div>
         <div class="roadmap-item">
