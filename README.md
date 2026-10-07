@@ -1,134 +1,41 @@
 # Mohamed Elsaid
 
-**Bioinformatics & Biotech Data Analytics | NGS Pipeline Development | GMP/GLP Data Integrity**
+**Bioinformatics and Computational Biology, built on GMP and GLP data integrity discipline**
 
-M.S. Bioinformatics, Johns Hopkins University (2026) · Maryland, USA
+M.S. Bioinformatics, Johns Hopkins University (completed May 2026). Maryland, USA.
 
-[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://github.com/MohamedElsaid-bit/biomedical-ml-classification)
-[![R](https://img.shields.io/badge/R-DESeq2-276DC3?logo=r&logoColor=white)](https://github.com/MohamedElsaid-bit/rna-seq-differential-expression-pipeline)
-[![Snakemake](https://img.shields.io/badge/Snakemake-workflow-039475)](https://github.com/MohamedElsaid-bit/rna-seq-differential-expression-pipeline)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?logo=scikitlearn&logoColor=white)](https://github.com/MohamedElsaid-bit/biomedical-ml-classification)
-[![GATK4](https://img.shields.io/badge/GATK4-variant%20calling-4B8BBE)](#roadmap-in-progress--planned)
+[Portfolio site](https://mohamedelsaid-bit.github.io/Portfolio-/) · [Email](mailto:melsaid2017@gmail.com) · [LinkedIn](https://www.linkedin.com/in/mohamed-elsaid-0a0b56231/) · [GitHub](https://github.com/MohamedElsaid-bit) · [Resume](https://github.com/MohamedElsaid-bit/Portfolio-/blob/main/Mohamed_Elsaid_Resume.pdf)
 
-📧 [melsaid2017@gmail.com](mailto:melsaid2017@gmail.com) &nbsp;·&nbsp; 🌐 [Portfolio](https://mohamedelsaid-bit.github.io/Portfolio-/) &nbsp;·&nbsp; 💼 [LinkedIn](https://www.linkedin.com/in/mohamed-elsaid-0a0b56231/) &nbsp;·&nbsp; 🐙 [GitHub](https://github.com/MohamedElsaid-bit) &nbsp;·&nbsp; 📄 [Resume](https://github.com/MohamedElsaid-bit/Portfolio-/blob/main/Mohamed_Elsaid_Resume.pdf)
+This repo holds the portfolio site itself (GitHub Pages, plain HTML and CSS, no framework). The six project repos linked below each hold their own code, environment, and results.
 
----
+## About
 
-### Contents
-[About](#about-me) · [Project Map](#project-map) · [Completed Projects](#completed-projects) · [Roadmap](#roadmap-in-progress--planned) · [Technical Skills](#technical-skills) · [Professional Background](#professional-background) · [Contact](#contact)
+Pharmaceutical scientist turned bioinformatician. Three plus years as an Associate Scientist at Pfizer (SARS CoV 2 vaccine immunogenicity testing, statistical analysis supporting FDA submissions) and a QC Microbiologist at Catalent Pharma Solutions (GMP sterility and bioburden testing). I build NGS pipelines and machine learning workflows the way regulated biotech expects: version controlled, validated, documented end to end, and honest about what the results actually show.
 
----
+Open to entry level Bioinformatics Analyst, Bioinformatics Scientist, Computational Biologist, and Scientific Data Analyst roles.
 
-## About Me
+## Completed projects (6 of 6)
 
-Pharmaceutical scientist turned bioinformatician. I build NGS pipelines and ML workflows the way regulated biotech expects — version-controlled, reproducible, validated, and documented end-to-end.
+| Project | Stack | Result |
+|---|---|---|
+| [RNA-seq Differential Expression](https://github.com/MohamedElsaid-bit/rna-seq-differential-expression-pipeline) | Snakemake, STAR, DESeq2, R | 108 differentially expressed genes (61 up, 47 down) on real airway dexamethasone data; known genes DUSP1, PER1, FKBP5 correctly recovered |
+| [Germline Variant Calling](https://github.com/MohamedElsaid-bit/variant-calling-pipeline) | Snakemake, GATK4, BWA-MEM, bcftools | 71 PASS variants from 89 raw candidates; simulated read artifacts (Ti/Tv, dbSNP concordance) reported and explained, not hidden |
+| [Biomedical ML Classification](https://github.com/MohamedElsaid-bit/biomedical-ml-classification) | Python, scikit-learn | 98.3% test accuracy on a tutorial dataset; 99.4% test accuracy classifying 5 real TCGA cancer types from 20,531 real gene expression features |
+| [Portfolio Analytics (SQL)](https://github.com/MohamedElsaid-bit/bioinformatics-analytics-sql) | SQLite, SQL, Python | A LIMS style schema loaded from this portfolio's own real pipeline outputs; 8 SQL queries, zero external dependencies |
+| [Gut Microbiome Diversity Analysis](https://github.com/MohamedElsaid-bit/gut-microbiome-diversity-analysis) | R, DADA2, phyloseq, ANCOM-BC2 | Real mouse fecal 16S data; significant shift in community composition (PERMANOVA p = 0.001) despite no significant alpha diversity change |
+| [Multi-Omics Integration Capstone](https://github.com/MohamedElsaid-bit/multi-omics-integration-capstone) | R, mixOmics (DIABLO) | Real matched TCGA mRNA/miRNA/protein data; reports honestly that the single best omics layer outperformed the 3 block integrated model on this dataset |
 
-- 🎓 **M.S. Bioinformatics**, Johns Hopkins University (2026 graduate)
-- 🏢 **3+ years** GMP/GLP industry experience — Pfizer, Catalent Pharma Solutions
-- 🧬 **ALCOA+ discipline applied to code** — the same data-integrity standard used for regulatory submissions, now applied to pipelines and repos
-- 🎯 **Targeting:** entry-level Bioinformatics Analyst/Scientist, Computational Biologist, or Biotech Data Analyst roles
+Each repo's README documents its dataset, exact run commands, and results and interpretation in full; the table above is a summary, not the full picture.
 
----
-
-## Project Map
-
-```mermaid
-graph TD
-    A["Mohamed Elsaid — Bioinformatics Portfolio"] --> B["NGS & Pipeline Development"]
-    A --> C["ML / Biotech Data Analytics"]
-    A --> D["Multi-Omics Integration"]
-
-    B --> B1["🟢 RNA-seq Differential Expression Pipeline<br/>STAR • DESeq2 • GSEA, airway data on three chromosomes"]
-    B --> B2["⚪ Germline Variant Calling Pipeline<br/>GATK4 Best Practices • BWA-MEM2 — queued next"]
-    B --> B3["⚪ Gut Microbiome Diversity Analysis<br/>16S / Metagenomics • QIIME2"]
-
-    C --> C1["🟢 Biomedical ML Classification Pipeline<br/>Random Forest • SVM • Logistic Regression"]
-    C --> C2["⚪ Antimicrobial Resistance Classifier<br/>Genomic + Phenotypic ML"]
-
-    D --> D1["⚪ Multi-Omics Integration Capstone<br/>+ Power BI Dashboard"]
-
-    style C1 fill:#2ea44f,color:#ffffff,stroke:#22863a
-    style B1 fill:#2ea44f,color:#ffffff,stroke:#22863a
-    style B2 fill:#6a737d,color:#ffffff,stroke:#586069
-    style B3 fill:#6a737d,color:#ffffff,stroke:#586069
-    style C2 fill:#6a737d,color:#ffffff,stroke:#586069
-    style D1 fill:#6a737d,color:#ffffff,stroke:#586069
-```
-
-🟢 Completed &nbsp;·&nbsp; 🟡 In Progress &nbsp;·&nbsp; ⚪ Planned
-
----
-
-## Completed Projects
-
-### [Biomedical ML Classification Pipeline](https://github.com/MohamedElsaid-bit/biomedical-ml-classification)
-Benchmarked Random Forest, Logistic Regression, and SVM classifiers on a biological dataset with 5-fold cross-validation and feature engineering. Leakage-aware pipeline design (scaling fit on training folds only), CI-validated on every push.
-
-**Held-out test set results:**
-
-| Model | Accuracy | ROC-AUC |
-|---|:---:|:---:|
-| Logistic Regression | **98.3%** | **0.995** |
-| SVM (RBF) | **98.3%** | **0.995** |
-| Random Forest | 95.6% | 0.994 |
-
-*Wisconsin Breast Cancer dataset · academic/portfolio use only, not clinical*
-
-**Stack:** Python · scikit-learn &nbsp;|&nbsp; [View Code →](https://github.com/MohamedElsaid-bit/biomedical-ml-classification)
-
-### [RNA-seq Differential Expression Pipeline](https://github.com/MohamedElsaid-bit/rna-seq-differential-expression-pipeline)
-Snakemake workflow (FastQC, Trimmomatic, STAR, featureCounts, DESeq2, clusterProfiler GSEA, MultiQC) run end to end on public airway smooth muscle data (GEO GSE52778, dexamethasone versus untreated, 4 donors, paired design). Scoped to chr5, chr6 and chr17 and the first 5 million read pairs per sample so it runs on a laptop, which the project README states plainly.
-
-**Results:** 108 differentially expressed genes (61 up, 47 down). Known dexamethasone genes are recovered:
-
-| Gene | log2 fold change | Adjusted p |
-|---|:---:|:---:|
-| DUSP1 | 2.99 | 6.0e-106 |
-| PER1 | 3.04 | 9.5e-38 |
-| FKBP5 | 3.85 | 1.7e-23 |
-
-*Reported and explained in the project README: 21 to 24% unique mapping (whole genome reads against a three chromosome reference) and no significant Hallmark gene sets at this scale.*
-
-**Stack:** Snakemake · STAR · DESeq2 · R &nbsp;|&nbsp; [View Code →](https://github.com/MohamedElsaid-bit/rna-seq-differential-expression-pipeline)
-
----
-
-## Roadmap (In Progress / Planned)
-
-| Project | Description | Stack | Status |
-|---|---|---|:---:|
-| **Germline Variant Calling** | GATK4 Best Practices (FastQC → Trimmomatic → BWA-MEM2 → MarkDuplicates → BQSR → HaplotypeCaller → filtering → SnpEff) on a chr20/NA12878 benchmark subset. | Snakemake, GATK4, BWA-MEM2, SnpEff | ⚪ Queued next |
-| **AMR Classifier** | Predicts antimicrobial resistance from genomic + phenotypic data — direct biotech drug-resistance screening application. | Python, scikit-learn | ⚪ Planned |
-| **Gut Microbiome Diversity** | Diversity/composition analysis from 16S rRNA and metagenomic sequencing data. | Python, R, QIIME2 | ⚪ Planned |
-| **Multi-Omics Capstone** | Integrates transcriptomic, genomic, and other omics layers, with an interactive Power BI dashboard for results exploration. | Python, R, Power BI | ⚪ Planned |
-
----
-
-## Technical Skills
+## Technical skills
 
 | Category | Skills |
 |---|---|
-| **NGS & Pipelines** | RNA-seq · Germline variant calling · STAR · BWA-MEM2 · FastQC · Trimmomatic · GATK4 Best Practices · SAMtools · SnpEff · GO/KEGG enrichment · Snakemake |
-| **Statistical & ML** | R/DESeq2 · scikit-learn (Random Forest, Logistic Regression, SVM) · k-fold CV · ROC/AUC · feature engineering |
-| **Languages & Tools** | Python · R · SQL · Bash · Linux/Unix · Git/GitHub · Conda · Docker · GitHub Actions CI |
-| **GMP/GLP & Data Integrity** | LIMS · ALCOA+ · 21 CFR Part 11 · SOP development · audit-ready documentation |
-
----
-
-## Professional Background
-
-3+ years as an Associate Scientist at **Pfizer** (SARS-CoV-2 vaccine immunogenicity testing, statistical analysis supporting FDA submissions) and **Catalent Pharma Solutions** (GMP sterility/bioburden testing, zero data-integrity findings over a 6-month audit period). Reproducibility and data integrity aren't an afterthought in my work — they're the starting point.
-
-Full details in my [resume](https://github.com/MohamedElsaid-bit/Portfolio-/blob/main/Mohamed_Elsaid_Resume.pdf).
-
----
+| NGS and pipelines | RNA-seq, germline variant calling, 16S amplicon analysis, STAR, BWA-MEM, GATK4 best practices, DADA2, Snakemake |
+| Statistics and ML | DESeq2, scikit-learn (Random Forest, Logistic Regression, SVM), mixOmics (DIABLO), PERMANOVA, ANCOM-BC2, cross validation |
+| Languages and tools | Python, R, SQL, Bash, Linux, Git and GitHub, Conda, Docker, GitHub Actions CI |
+| GMP/GLP and data integrity | ALCOA+, 21 CFR Part 11, SOP development, audit ready documentation |
 
 ## Contact
 
-Open to entry-level roles in **bioinformatics, biotech data analytics, computational biology, and NGS pipeline development**, particularly where data integrity and scientific rigor are valued.
-
-📧 [melsaid2017@gmail.com](mailto:melsaid2017@gmail.com) &nbsp;·&nbsp; 💼 [LinkedIn](https://www.linkedin.com/in/mohamed-elsaid-0a0b56231/) &nbsp;·&nbsp; 🐙 [GitHub](https://github.com/MohamedElsaid-bit)
-
----
-
-<sub>© 2026 Mohamed Elsaid</sub>
+[Email](mailto:melsaid2017@gmail.com) · [LinkedIn](https://www.linkedin.com/in/mohamed-elsaid-0a0b56231/) · [GitHub](https://github.com/MohamedElsaid-bit)
