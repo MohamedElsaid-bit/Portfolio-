@@ -253,7 +253,7 @@
         <div class="map-track">
           <h3>ML / Biotech Data Analytics</h3>
           <div class="rail">
-            <div class="map-node"><span class="dot done"></span><strong>Biomedical ML Classification</strong><p>Random Forest · SVM · Logistic Regression</p></div>
+            <div class="map-node"><span class="dot done"></span><strong>Biomedical ML Classification</strong><p>Random Forest · SVM · Logistic Regression · deepened with real TCGA RNA-seq data</p></div>
             <div class="map-node"><span class="dot done"></span><strong>Portfolio Analytics (SQL)</strong><p>SQLite · schema, core queries and a reporting layer over the real pipeline outputs above</p></div>
             <div class="map-node"><span class="dot planned"></span><strong>Antimicrobial Resistance Classifier</strong><p>Genomic + phenotypic ML features</p></div>
           </div>
@@ -280,8 +280,8 @@
       <div class="proj-grid">
         <article class="card">
           <h3><span class="stamp done"><span class="dot"></span>Done</span>Biomedical ML Classification Pipeline</h3>
-          <p>Benchmarked Random Forest, Logistic Regression, and SVM classifiers on a biological dataset using scikit-learn, with 5-fold cross-validation and feature engineering.</p>
-          <p class="result">Result: reported ROC/AUC, confusion matrices, and feature importance to compare model performance.</p>
+          <p>Two part scikit-learn benchmark. Part 1: Random Forest, Logistic Regression and SVM on the tutorial level Wisconsin Breast Cancer dataset, with 5-fold cross-validation. Part 2: the same leakage-free discipline on a real, high dimensional omics dataset, 801 real TCGA tumor samples with 20,531 gene expression features each, using training-fold-only feature selection to classify 5 cancer types.</p>
+          <p class="result">Result: 98.3% test accuracy (Part 1, binary). 99.4% test accuracy classifying 5 real TCGA tumor types from 20,531 genes (Part 2), honestly explained: tissue of origin separates almost linearly in bulk RNA-seq, which is why accuracy is this high.</p>
           <div class="tech">
             <span class="chip">Python</span><span class="chip">scikit-learn</span><span class="chip">Random Forest</span><span class="chip">SVM</span>
           </div>
